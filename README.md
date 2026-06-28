@@ -1,72 +1,171 @@
-# Healthcare AI Dashboard
+# 🏥 Healthcare AI Dashboard
 
-## Overview
+A modern React-based Healthcare Analytics Dashboard developed as part of a technical assessment. The application enables users to upload healthcare datasets, automatically analyze data quality, visualize insights through interactive charts, and explore the data using an AI-assisted analytics interface.
 
-Healthcare AI Dashboard is a React-based analytics application developed as part of the technical assessment. The application allows users to upload CSV or Excel datasets, automatically analyzes the data, generates interactive visualizations, and provides AI-assisted insights with clearly labeled data sources.
+**Live Demo:** https://healthcare-ai-dashboard.vercel.app
 
-The project focuses on creating an end-to-end analytics workflow, from data ingestion to visualization and AI-powered exploration.
+**GitHub Repository:** https://github.com/ahmedjubaer403-creator/healthcare-ai-dashboard
 
 ---
 
-## Features
+# 📌 Project Overview
 
-* Mock user authentication
-* Upload CSV (.csv) and Excel (.xlsx) files
-* Parse uploaded files into structured JSON
-* Preview the first 100 rows of uploaded data
-* Data Quality Summary
+The objective of this project was to build a complete analytics workflow that transforms uploaded healthcare datasets into meaningful visual insights.
 
-  * Missing values by column
-  * Duplicate row detection
-* Dynamic analytics dashboard
+The application allows users to:
+
+* Upload CSV or Excel datasets
+* Parse data into structured JSON
+* Review data quality
+* Generate interactive visualizations
+* Ask AI-powered questions about the uploaded data
+* Save charts for future reference
+
+The solution was designed with modular React components, reusable hooks, and a clean user interface while keeping the architecture easy to maintain and extend.
+
+---
+
+# ✨ Features
+
+## 🔐 Authentication
+
+* Mock user login
+* Session persistence
+* Logout support
+
+---
+
+## 📂 File Upload
+
+Supports
+
+* CSV (.csv)
+* Excel (.xlsx)
+
+Uploaded datasets are parsed immediately and converted into structured JSON for further analysis.
+
+---
+
+## 📊 Data Preview
+
+* Displays the first 100 rows
+* Collapsible preview table
+* Dynamic column generation
+
+---
+
+## 📈 Data Quality Summary
+
+Automatically calculates
+
+* Missing values per column
+* Duplicate row count
+* Dataset overview
+
+---
+
+## 📉 Interactive Dashboard
+
+The dashboard is generated dynamically from the uploaded dataset.
+
+Includes
+
+* KPI cards
+* Summary statistics
 * Interactive charts
-* AI-powered data assistant
-* Source-labelled AI responses
-* Saved Charts Dashboard
-* Responsive UI
-* LocalStorage support for saved charts
+* Dataset-driven visualizations
+* Dynamic filtering
+
+No analytics are displayed until a valid dataset is uploaded.
 
 ---
 
-## AI Response Format
+## 🤖 AI Analytics Assistant
 
-Every AI response follows the required assignment structure:
+Users can ask questions about the uploaded dataset.
 
-* Source A — Based on the uploaded file
-* Source B — Based on parsed structured data
-* Comparison
-* Suggested Next Step / Chart
+Each response follows the required assessment structure:
+
+### Source A
+
+Answer based on the uploaded file.
+
+### Source B
+
+Answer based on the parsed structured dataset.
+
+### Comparison
+
+Explains whether both answers match and why.
+
+### Suggested Next Step
+
+Recommends additional analysis or visualizations.
 
 ---
 
-## Tech Stack
+## 💾 Saved Charts Dashboard
 
-### Frontend
+Users can
+
+* Save charts
+* View saved charts
+* Delete saved charts
+
+Saved charts are stored using LocalStorage and remain available after refreshing the application.
+
+---
+
+# 🏗️ Technology Stack
+
+## Frontend
 
 * React
 * TypeScript
 * Vite
 
-### Data Processing
+## Data Processing
 
 * SheetJS
 * PapaParse
 
-### Charts
+## Charts
 
 * Recharts
 
-### Storage
+## Storage
 
 * LocalStorage
 
-### Authentication
+## Authentication
 
 * Mock Authentication
 
+## Styling
+
+* CSS
+
 ---
 
-## Installation
+# 📁 Project Structure
+
+```text
+src/
+│
+├── components/
+├── hooks/
+├── pages/
+├── types/
+├── utils/
+│
+public/
+package.json
+README.md
+```
+
+---
+
+# 🚀 Installation
 
 Clone the repository
 
@@ -86,74 +185,105 @@ Run locally
 npm run dev
 ```
 
-Build
+Create production build
 
 ```bash
 npm run build
 ```
 
----
+Preview production build
 
-## Deployment
-
-The application has been deployed using Vercel.
-
----
-
-## Sample Dataset
-
-A sample healthcare dataset is included in the repository for testing.
+```bash
+npm run preview
+```
 
 ---
 
-## Assumptions
+# 🌐 Deployment
 
-* Authentication is implemented as mock authentication for demonstration purposes.
-* AI responses are generated using the uploaded dataset and parsed data.
-* Saved charts are stored locally using LocalStorage.
+The application is deployed on **Vercel**.
 
----
+Production URL
 
-## Limitations
-
-* No backend database.
-* Saved charts are browser-specific.
-* Authentication is mock only.
-* Large datasets may require additional optimization.
+https://healthcare-ai-dashboard.vercel.app
 
 ---
 
-## Future Improvements
+# 📄 Sample Dataset
 
-* Real authentication (Firebase/Supabase/Auth0)
-* Database persistence
+A sample healthcare dataset is included in the repository for testing and demonstration purposes.
+
+---
+
+# 🧠 Design Decisions
+
+Several architectural decisions were made while developing this project:
+
+* Modular and reusable React components
+* Reusable custom hooks for state management
+* Dynamic rendering based entirely on uploaded datasets
+* Empty dashboard state before upload
+* Local persistence for saved charts
+* Clear separation between data parsing, visualization, and AI interaction
+* Responsive layout for different screen sizes
+
+---
+
+# ⚠️ Assumptions
+
+* Authentication is implemented as mock authentication for demonstration.
+* AI responses are generated from the uploaded dataset and parsed data structure.
+* Saved charts are stored locally in the browser.
+
+---
+
+# 🚧 Current Limitations
+
+* No backend database
+* No real authentication provider
+* Saved charts are browser-specific
+* AI assistant uses local data processing rather than an external LLM API
+
+---
+
+# 🔮 Future Improvements
+
+Potential enhancements include
+
 * OpenAI API integration
-* Advanced dashboard filtering
-* Export charts as PDF/PNG
-* Multi-user support
+* Firebase or Supabase authentication
+* Database persistence
+* User accounts
+* Export charts to PDF or PNG
+* Dashboard sharing
+* Advanced filtering
+* Dark mode
+* Role-based access control
 
 ---
 
-## Project Structure
+# ✅ Assignment Requirements Coverage
 
-```
-src/
-components/
-hooks/
-pages/
-utils/
-types/
-
-public/
-
-README.md
-package.json
-```
+| Requirement                  | Status |
+| ---------------------------- | ------ |
+| User Login                   | ✅      |
+| CSV Upload                   | ✅      |
+| XLSX Upload                  | ✅      |
+| Parse to JSON                | ✅      |
+| Data Preview                 | ✅      |
+| Data Quality Summary         | ✅      |
+| AI Chat                      | ✅      |
+| Source-labelled AI Responses | ✅      |
+| Interactive Charts           | ✅      |
+| Saved Charts Dashboard       | ✅      |
+| Dynamic Dashboard            | ✅      |
 
 ---
 
-## Author
+# 👨‍💻 Author
 
-Ahmed Jubaer
+**Ahmed Jubaer**
 
 Technical Assessment Submission
+
+Thank you for reviewing this project.
